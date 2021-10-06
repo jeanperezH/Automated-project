@@ -1,0 +1,19 @@
+
+# Hacer correr un test específico
+# login via checkout
+mvn -Dit.test=CheckoutIT#shouldBeAbleToLoginViaCheckout clean verify
+# order placed thermomix
+mvn -Dit.test=OrderProcessIT#shouldBeAbleToOrderSimpleProductThermomix clean verify
+
+#clonar una rama específica
+git clone --branch <branchname> <remote-repo-url>
+
+#rama phase 2 = VUWW-2783_Phase_2
+#repo Aman = ssh://git@vorwerk.aman.de/viamerica-shop-testing
+
+#ejemplo: git clone --branch VUWW-2783_Phase_2 ssh://git@vorwerk.aman.de/viamerica-shop-testing
+
+mvn -Dit.test=CheckoutIT#shouldBeAbleToLoginViaCheckout clean verify
+
+# Hacer correr un test en un país diferente
+COUNTRY=can ENVIRONMENT=stage mvn -Dit.test=CanadaPostIT#shouldBeAbleToVerifyShipWithCanadaPost clean verify
